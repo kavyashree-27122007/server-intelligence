@@ -1,0 +1,160 @@
+{
+  "brand": "SpotifyCares",
+  "num_intents": 9,
+  "description": "Empirically discovered intent taxonomy derived from historical customer support interactions on Twitter (TWCS dataset) for SpotifyCares.",
+  "intents": [
+    {
+      "intent_id": "audio_playback_issues",
+      "intent_name": "Audio & Playback Issues",
+      "description": "Inquiries regarding music streaming playback interruptions, audio pausing, stuttering, crashing during playback, volume anomalies, or distorted sound output.",
+      "inclusion_criteria": "Mentions song pausing, skipping, audio cutting out, volume fluctuations, error codes during playback, distorted sound, or track stopping.",
+      "exclusion_criteria": "Excludes billing issues, playlist ordering issues without playback failure, or offline downloads failing to save.",
+      "examples": [
+        "Spotify keeps pausing every 30 seconds when I lock my phone screen on iPhone 8 iOS 11.",
+        "Songs keep skipping to the middle and cutting out completely on desktop Windows 10 app.",
+        "Playback stopped. Error code 4: 'Unable to stream this track'. What does this mean?",
+        "Why does my music crackle only through bluetooth in my car but works fine on headphones?"
+      ],
+      "precision": 0.6923,
+      "recall": 0.5143,
+      "f1": 0.5902,
+      "support": 35
+    },
+    {
+      "intent_id": "subscription_billing",
+      "intent_name": "Subscription & Billing",
+      "description": "Questions and complaints concerning subscription renewals, double charges, payment method failures, refund requests, tax invoices, and student discounts.",
+      "inclusion_criteria": "Mentions charges, debit/credit cards, PayPal, pricing increases, overdue payments, invoices, refunds, or payment update steps.",
+      "exclusion_criteria": "Excludes Family plan address verification (which belongs to Family & Duo Administration) or account credential loss.",
+      "examples": [
+        "I was charged twice this month for Spotify Family plan: $14.99 on Oct 1 and again on Oct 3.",
+        "How do I cancel my student discount subscription before next month's renewal?",
+        "My credit card expired and payment failed. How do I update my payment method?",
+        "I canceled my Premium two weeks ago but you just took $9.99 from my checking account yesterday."
+      ],
+      "precision": 0.9565,
+      "recall": 0.7333,
+      "f1": 0.8302,
+      "support": 30
+    },
+    {
+      "intent_id": "account_access_login",
+      "intent_name": "Account Access & Login",
+      "description": "Issues related to user authentication, password resets, email address modifications, username inquiries, account takeover/security breaches, and OAuth unlinking.",
+      "inclusion_criteria": "Mentions password reset, cannot log in, email changed, hacker/compromised account, CAPTCHA loop, or unlinking third-party social log-ins.",
+      "exclusion_criteria": "Excludes subscription payment failures when login is successful.",
+      "examples": [
+        "I forgot the password to my account and the reset link is not arriving in my inbox or spam folder.",
+        "Someone in Russia logged into my account and changed the email address. I am locked out completely!!",
+        "Can I change my username from random numbers to my actual name?",
+        "It keeps saying 'Incorrect username or password' even though I just reset it 5 minutes ago."
+      ],
+      "precision": 0.7,
+      "recall": 0.6364,
+      "f1": 0.6667,
+      "support": 22
+    },
+    {
+      "intent_id": "playlist_library_management",
+      "intent_name": "Playlist & Library Management",
+      "description": "Questions regarding organizing playlists, recovering accidentally deleted playlists, collaborative playlists, library capacity limits, custom cover art, and sorting tracks.",
+      "inclusion_criteria": "Mentions playlist creation, deleting/recovering playlists, collaborative links, Liked Songs library, folder structures, or sorting rules.",
+      "exclusion_criteria": "Excludes audio streaming playback failures while listening to a playlist.",
+      "examples": [
+        "All my playlists disappeared overnight! 5 years of curated music just gone. Please restore them!",
+        "How do I share a collaborative playlist with my friend so we can both add tracks?",
+        "I accidentally deleted a playlist 10 minutes ago, is there any recycle bin?",
+        "Can I sort my playlist by date added on the iOS mobile app?"
+      ],
+      "precision": 0.7917,
+      "recall": 0.8636,
+      "f1": 0.8261,
+      "support": 22
+    },
+    {
+      "intent_id": "offline_listening_downloads",
+      "intent_name": "Offline Listening & Downloads",
+      "description": "Inquiries concerning downloading music and podcasts for offline playback, 30-day licensing verification, storage location (SD card vs internal), and device limits.",
+      "inclusion_criteria": "Mentions offline mode, downloaded songs not playing on airplane mode, SD card storage location, or download limits.",
+      "exclusion_criteria": "Excludes general online playback stuttering when connected to Wi-Fi/4G.",
+      "examples": [
+        "Downloaded songs won't play offline on airplane mode. It says I must connect to the internet.",
+        "Where does Spotify store offline downloaded music files on an Android SD card?",
+        "What is the maximum number of devices I can download offline tracks on?",
+        "My downloads keep getting deleted automatically every time my phone battery gets low."
+      ],
+      "precision": 0.7778,
+      "recall": 0.8235,
+      "f1": 0.8,
+      "support": 17
+    },
+    {
+      "intent_id": "device_connectivity_integration",
+      "intent_name": "Device & Connectivity Integration",
+      "description": "Technical issues connecting Spotify with external hardware, including Spotify Connect, smart speakers (Sonos, Alexa, Google Home), Apple Watch, CarPlay, Android Auto, and consoles.",
+      "inclusion_criteria": "Mentions Sonos, Alexa, Echo, PlayStation, CarPlay, Apple Watch, Bluetooth pairing, or casting to smart TVs.",
+      "exclusion_criteria": "Excludes mobile app software bugs that occur when no external hardware is connected.",
+      "examples": [
+        "Spotify Connect doesn't detect my Sonos speakers anymore after updating my router.",
+        "Apple Watch Spotify app says 'Connect to Bluetooth' even though my AirPods are already connected.",
+        "CarPlay crashes every time I tap on any playlist while driving.",
+        "Amazon Echo says 'Spotify is not linked' but the Alexa app shows it is linked."
+      ],
+      "precision": 0.8333,
+      "recall": 0.2632,
+      "f1": 0.4,
+      "support": 19
+    },
+    {
+      "intent_id": "catalog_content_inquiries",
+      "intent_name": "Catalog & Content Inquiries",
+      "description": "Questions regarding music availability, artist discographies, missing songs/albums, regional licensing restrictions, lyrics discrepancies, and artist profile management.",
+      "inclusion_criteria": "Mentions specific songs or albums missing, greyed out tracks, incorrect lyrics, explicit content filter, or artist verification questions.",
+      "exclusion_criteria": "Excludes playback engine crashes on songs that are available.",
+      "examples": [
+        "Why was Taylor Swift's 1989 album removed from Spotify in my country?",
+        "The lyrics for this song are completely wrong and belong to a different artist.",
+        "How do I submit my independent band's new single to Spotify for Artists?",
+        "Why do some songs have canvas video loops while others only have static covers?"
+      ],
+      "precision": 0.65,
+      "recall": 0.7647,
+      "f1": 0.7027,
+      "support": 17
+    },
+    {
+      "intent_id": "family_duo_administration",
+      "intent_name": "Family & Duo Administration",
+      "description": "Managing shared subscription tiers, including Family and Duo member invitations, home physical address verification hurdles, member removal, and parental controls.",
+      "inclusion_criteria": "Mentions Family Plan, Duo Plan, address matching errors, invitation links expired, or managing sub-accounts.",
+      "exclusion_criteria": "Excludes single individual subscription cancellation.",
+      "examples": [
+        "My brother can't join my Family Plan. It keeps saying 'You must live at the same address'.",
+        "How do I change the home address on my Family Plan after moving apartments?",
+        "I am the plan manager. How do I remove a former roommate from my Premium Duo subscription?",
+        "Can I invite someone from another country to my Family Plan?"
+      ],
+      "precision": 1.0,
+      "recall": 0.7778,
+      "f1": 0.875,
+      "support": 18
+    },
+    {
+      "intent_id": "general_inquiries_feedback",
+      "intent_name": "General Inquiries & Feedback",
+      "description": "Broad inquiries, UI/feature feedback, internship inquiries, service status/outage queries, general praise/criticism, or ambiguous messages requiring clarification.",
+      "inclusion_criteria": "General feedback, service status inquiries, feature requests, company information, or ultra-brief/vague greetings lacking context.",
+      "exclusion_criteria": "Actionable technical support or account issues with specific details.",
+      "examples": [
+        "Is Spotify down today? Nothing is loading anywhere.",
+        "Your company is run by clowns and your latest UI update is the ugliest thing I have ever seen.",
+        "help",
+        "Where can I view my Spotify Wrapped annual listening statistics?"
+      ],
+      "precision": 0.3061,
+      "recall": 0.75,
+      "f1": 0.4348,
+      "support": 20
+    }
+  ]
+}

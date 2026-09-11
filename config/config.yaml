@@ -1,0 +1,60 @@
+# Support Intelligence — Configuration
+
+brand: "SpotifyCares"
+brand_twitter_handle: "SpotifyCares"
+
+# Data pipeline
+data:
+  raw_path: "data/raw/twcs.csv"
+  processed_path: "data/processed"
+  sample_path: "data/samples"
+  index_path: "data/index"
+  golden_set_path: "data/golden_set.csv"
+  sample_size: 50000
+  random_seed: 42
+  train_ratio: 0.80
+  dev_ratio: 0.10
+  test_ratio: 0.10
+
+# Intent classification
+classification:
+  num_intents: 9
+  min_examples_per_intent: 10
+  confidence_threshold: 0.45
+
+# Retrieval
+retrieval:
+  embedding_model: "all-MiniLM-L6-v2"
+  top_k: 5
+  similarity_threshold: 0.35
+  index_type: "Flat"  # or IVFFlat for large datasets
+
+# LLM
+llm:
+  provider: "gemini"   # gemini | openai | mock
+  model: "gemini-1.5-flash"
+  temperature: 0.3
+  max_tokens: 400
+  timeout: 30
+
+# Escalation
+escalation:
+  low_confidence_threshold: 0.50
+  low_similarity_threshold: 0.40
+  max_auto_handle_confidence: 0.45
+
+# Evaluation
+evaluation:
+  golden_set_path: "data/golden_set.csv"
+  results_dir: "evaluation"
+  judge_model: "gemini-1.5-flash"
+
+# API
+api:
+  host: "0.0.0.0"
+  port: 8000
+  cors_origins:
+    - "http://localhost:5173"
+    - "http://localhost:3000"
+  max_message_length: 1000
+  rate_limit: 60  # requests per minute

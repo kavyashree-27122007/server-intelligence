@@ -1,0 +1,166 @@
+{
+  "selected_brand": "AmazonHelp",
+  "stats": [
+    {
+      "brand": "AmazonHelp",
+      "n_conversations": 16958,
+      "n_customer_messages": 16958,
+      "n_brand_responses": 17875,
+      "avg_conv_length": 1.05,
+      "n_usable_training": 14272,
+      "n_usable_evaluation": 3568,
+      "selection_score": 0.87
+    },
+    {
+      "brand": "AppleSupport",
+      "n_conversations": 6212,
+      "n_customer_messages": 6212,
+      "n_brand_responses": 6234,
+      "avg_conv_length": 1.0,
+      "n_usable_training": 4986,
+      "n_usable_evaluation": 1246,
+      "selection_score": 0.8667
+    },
+    {
+      "brand": "Uber_Support",
+      "n_conversations": 3882,
+      "n_customer_messages": 3882,
+      "n_brand_responses": 3900,
+      "avg_conv_length": 1.0,
+      "n_usable_training": 3120,
+      "n_usable_evaluation": 780,
+      "selection_score": 0.7743
+    },
+    {
+      "brand": "Delta",
+      "n_conversations": 2953,
+      "n_customer_messages": 2953,
+      "n_brand_responses": 3150,
+      "avg_conv_length": 1.07,
+      "n_usable_training": 2502,
+      "n_usable_evaluation": 625,
+      "selection_score": 0.6814
+    },
+    {
+      "brand": "AmericanAir",
+      "n_conversations": 2713,
+      "n_customer_messages": 2713,
+      "n_brand_responses": 2735,
+      "avg_conv_length": 1.01,
+      "n_usable_training": 2184,
+      "n_usable_evaluation": 546,
+      "selection_score": 0.6252
+    },
+    {
+      "brand": "SpotifyCares",
+      "n_conversations": 2456,
+      "n_customer_messages": 2456,
+      "n_brand_responses": 2489,
+      "avg_conv_length": 1.01,
+      "n_usable_training": 1991,
+      "n_usable_evaluation": 497,
+      "selection_score": 0.5741
+    },
+    {
+      "brand": "British_Airways",
+      "n_conversations": 2110,
+      "n_customer_messages": 2110,
+      "n_brand_responses": 2267,
+      "avg_conv_length": 1.07,
+      "n_usable_training": 1812,
+      "n_usable_evaluation": 453,
+      "selection_score": 0.5195
+    },
+    {
+      "brand": "AskPlayStation",
+      "n_conversations": 1998,
+      "n_customer_messages": 1998,
+      "n_brand_responses": 2041,
+      "avg_conv_length": 1.02,
+      "n_usable_training": 1621,
+      "n_usable_evaluation": 405,
+      "selection_score": 0.4805
+    },
+    {
+      "brand": "XboxSupport",
+      "n_conversations": 1923,
+      "n_customer_messages": 1923,
+      "n_brand_responses": 2065,
+      "avg_conv_length": 1.07,
+      "n_usable_training": 1649,
+      "n_usable_evaluation": 412,
+      "selection_score": 0.4794
+    },
+    {
+      "brand": "TMobileHelp",
+      "n_conversations": 1996,
+      "n_customer_messages": 1996,
+      "n_brand_responses": 2007,
+      "avg_conv_length": 1.01,
+      "n_usable_training": 1604,
+      "n_usable_evaluation": 401,
+      "selection_score": 0.4775
+    },
+    {
+      "brand": "comcastcares",
+      "n_conversations": 1892,
+      "n_customer_messages": 1892,
+      "n_brand_responses": 1957,
+      "avg_conv_length": 1.03,
+      "n_usable_training": 1564,
+      "n_usable_evaluation": 391,
+      "selection_score": 0.4629
+    },
+    {
+      "brand": "hulu_support",
+      "n_conversations": 1907,
+      "n_customer_messages": 1907,
+      "n_brand_responses": 1926,
+      "avg_conv_length": 1.01,
+      "n_usable_training": 1540,
+      "n_usable_evaluation": 385,
+      "selection_score": 0.4601
+    },
+    {
+      "brand": "SouthwestAir",
+      "n_conversations": 1582,
+      "n_customer_messages": 1582,
+      "n_brand_responses": 1611,
+      "avg_conv_length": 1.02,
+      "n_usable_training": 1288,
+      "n_usable_evaluation": 322,
+      "selection_score": 0.3951
+    },
+    {
+      "brand": "Safaricom_Care",
+      "n_conversations": 1511,
+      "n_customer_messages": 1511,
+      "n_brand_responses": 1621,
+      "avg_conv_length": 1.07,
+      "n_usable_training": 1259,
+      "n_usable_evaluation": 314,
+      "selection_score": 0.3874
+    },
+    {
+      "brand": "VerizonSupport",
+      "n_conversations": 1475,
+      "n_customer_messages": 1475,
+      "n_brand_responses": 1493,
+      "avg_conv_length": 1.01,
+      "n_usable_training": 1193,
+      "n_usable_evaluation": 298,
+      "selection_score": 0.3714
+    }
+  ],
+  "dataset_info": {
+    "total_rows": 200000,
+    "n_inbound": 109883,
+    "n_outbound": 90117,
+    "unique_brands": 108,
+    "duplicates": 0,
+    "empty_text": 0,
+    "malformed": 0
+  },
+  "sample_size": 200000,
+  "random_seed": 42
+}
