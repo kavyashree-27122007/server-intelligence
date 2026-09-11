@@ -10,14 +10,76 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-PROJECT_ROOT = Path(__file__).parent.parent.parent
+PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
+if not (PROJECT_ROOT / "data").exists():
+    if Path("data").exists():
+        PROJECT_ROOT = Path(".").resolve()
+    elif (Path(__file__).resolve().parent.parent / "data").exists():
+        PROJECT_ROOT = Path(__file__).resolve().parent.parent
+
 CONFIG_PATH = PROJECT_ROOT / "config" / "config.yaml"
 
+DEFAULT_CONFIG = {
+    "brand": "SpotifyCares",
+    "brand_twitter_handle": "@SpotifyCares",
+    "data": {
+        "raw_path": "data/raw/twcs.csv",
+        "processed_path": "data/processed",
+        "sample_path": "data/processed/sample.csv",
+        "index_path": "data/index",
+        "golden_set_path": "data/golden_set.csv",
+        "sample_size": 8000,
+        "random_seed": 42,
+        "train_ratio": 0.8,
+        "dev_ratio": 0.1,
+        "test_ratio": 0.1,
+    },
+    "classification": {
+        "num_intents": 9,
+        "min_examples_per_intent": 20,
+        "confidence_threshold": 0.35,
+    },
+    "retrieval": {
+        "embedding_model": "all-MiniLM-L6-v2",
+        "top_k": 5,
+        "similarity_threshold": 0.35,
+        "index_type": "hybrid",
+    },
+    "llm": {
+        "provider": "evidence_synthesis",
+        "model": "evidence-synthesizer",
+        "temperature": 0.2,
+        "max_tokens": 200,
+        "timeout": 30,
+    },
+    "escalation": {
+        "low_confidence_threshold": 0.45,
+        "low_similarity_threshold": 0.35,
+        "max_auto_handle_confidence": 0.85,
+    },
+    "evaluation": {
+        "golden_set_path": "data/golden_set.csv",
+        "results_dir": "evaluation",
+        "judge_model": "gemini-1.5-flash",
+    },
+    "api": {
+        "host": "0.0.0.0",
+        "port": 8000,
+        "cors_origins": ["http://localhost:3000", "http://localhost:5173", "http://127.0.0.1:8000"],
+        "max_message_length": 5000,
+    }
+}
 
 def _load_yaml() -> dict:
-    with open(CONFIG_PATH, "r") as f:
-        return yaml.safe_load(f)
-
+    if CONFIG_PATH.exists():
+        try:
+            with open(CONFIG_PATH, "r", encoding="utf-8") as f:
+                loaded = yaml.safe_load(f)
+                if isinstance(loaded, dict):
+                    return loaded
+        except Exception:
+            pass
+    return DEFAULT_CONFIG
 
 _cfg = _load_yaml()
 

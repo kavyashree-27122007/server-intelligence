@@ -64,6 +64,9 @@ class SupportIntelligencePipeline:
         self.is_ready = True
 
     def analyze(self, request: AnalyzeRequest) -> AnalysisResult:
+        if not self.is_ready:
+            self.load_artifacts()
+
         start_time = time.time()
         request_id = str(uuid.uuid4())
         message = request.message.strip()
