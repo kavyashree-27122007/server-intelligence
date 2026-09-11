@@ -18,7 +18,7 @@
 
 | Attribute | Details |
 | :--- | :--- |
-| **Public Live URL** | [https://cafac18bee285c04-157-49-235-32.serveousercontent.com](https://cafac18bee285c04-157-49-235-32.serveousercontent.com) |
+| **Public Live URL** | [https://possible-drum-pearl-resource.trycloudflare.com](https://possible-drum-pearl-resource.trycloudflare.com) |
 | **Authentication** | Click **"Continue with Demo Access"** on the login page for instant access |
 | **Architecture** | FastAPI Backend (`127.0.0.1:8000`) + React / TypeScript / Tailwind CSS SPA (`dist/`) |
 | **Design System** | Editorial warm beige aesthetic (`#FAF8F3`, `#F5EDE0`, `#26231F`) with generous spacing and typographic hierarchy |
