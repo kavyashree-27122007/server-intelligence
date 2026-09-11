@@ -9,8 +9,8 @@ from pydantic import BaseModel, Field
 # ── Request Models ──────────────────────────────────────────────────────────
 
 class AnalyzeRequest(BaseModel):
-    message: str = Field(..., min_length=1, max_length=1000, description="Customer support message")
-    context: Optional[str] = Field(None, max_length=2000, description="Optional prior conversation context")
+    message: str = Field(..., min_length=1, max_length=5000, description="Customer support message")
+    context: Optional[str] = Field(None, max_length=5000, description="Optional prior conversation context")
 
 
 class ClassifyRequest(BaseModel):
