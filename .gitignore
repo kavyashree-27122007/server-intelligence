@@ -40,6 +40,10 @@ node_modules/
 frontend/node_modules/
 .npm
 
+# Logs (runtime artifacts - never commit)
+logs/
+*.log
+
 # System
 .DS_Store
 Thumbs.db
