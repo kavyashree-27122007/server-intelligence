@@ -198,6 +198,7 @@ def retrieve_evidence(intent_name: str, query: str, top_k: int = 5) -> List[Evid
 
 # ── API Routes ───────────────────────────────────────────────────────
 @app.get("/api/health")
+@app.get("/health")
 async def health():
     return {
         "status": "healthy",
@@ -209,6 +210,7 @@ async def health():
 
 
 @app.post("/api/analyze")
+@app.post("/analyze")
 async def analyze(req: AnalyzeRequest):
     start = time.time()
     message = req.message.strip()
@@ -235,6 +237,7 @@ async def analyze(req: AnalyzeRequest):
 
 
 @app.post("/api/retrieve")
+@app.post("/retrieve")
 async def retrieve(req: RetrieveRequest):
     intent = classify_intent(req.query)
     evidence = retrieve_evidence(intent.name, req.query, top_k=req.top_k)
@@ -242,6 +245,7 @@ async def retrieve(req: RetrieveRequest):
 
 
 @app.get("/api/metrics")
+@app.get("/metrics")
 async def metrics():
     return {
         "benchmark": "Support Intelligence TWCS Benchmark v1.0",
@@ -258,6 +262,7 @@ async def metrics():
 
 
 @app.get("/api/intents")
+@app.get("/intents")
 async def intents():
     return {
         "brand": "SpotifyCares",
@@ -278,6 +283,7 @@ async def intents():
 
 
 @app.get("/api/failures")
+@app.get("/failures")
 async def failures():
     return [
         {"id": 1, "category": "Ambiguous Intent", "description": "Customer message contains multiple overlapping intents", "frequency": "18%", "severity": "Medium", "mitigation": "Multi-label classification and confidence threshold routing"},
@@ -289,6 +295,7 @@ async def failures():
 
 
 @app.get("/api/decisions")
+@app.get("/decisions")
 async def decisions():
     return [
         {"id": 1, "title": "TF-IDF + Calibrated Classifier over Heavy LLM Classifier", "rationale": "Achieves 84.7% accuracy with <15ms inference latency and zero API cost", "trade_off": "Lower nuance on rare slang expressions"},
@@ -299,5 +306,6 @@ async def decisions():
 
 
 @app.get("/api")
+@app.get("/")
 async def api_root():
     return {"service": "Support Intelligence API", "status": "online", "docs": "/docs"}
